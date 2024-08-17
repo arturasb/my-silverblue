@@ -49,6 +49,7 @@ modules:
       # repo-name will overwrite the previously-configured repo-name for the user remote
       repo-name: flathub-user
       repo-title: "Flathub (User)"
+      install:
       - com.github.tchx84.Flatseal
       - de.haeckerfelix.Fragments
       - io.freetubeapp.FreeTube
