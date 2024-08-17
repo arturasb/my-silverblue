@@ -55,9 +55,9 @@ modules:
       - io.freetubeapp.FreeTube
       - org.keepassxc.KeePassXC
       - org.mozilla.Thunderbird
-      - org.mozilla.firefox
+      #- org.mozilla.firefox
       - org.telegram.desktop
-      - org.libreoffice.LibreOffice
+      #- org.libreoffice.LibreOffice
       - org.gnome.Connections
       - io.github.celluloid_player.Celluloid
       - com.usebottles.bottles
