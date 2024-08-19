@@ -63,10 +63,10 @@ modules:
       - com.usebottles.bottles
       - org.gnome.Boxes
       - com.mattjakeman.ExtensionManager
-  - type: gnome-extensions
-      install:
-        - GSConnect
-      uninstall:
+  type: gnome-extensions
+    install:
+      - GSConnect
+    uninstall:
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
