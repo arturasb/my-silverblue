@@ -62,6 +62,9 @@ modules:
       - com.usebottles.bottles
       - org.gnome.Boxes
       - com.mattjakeman.ExtensionManager
+      - org.gnome.Connections
+      - org.gnome.Calendar
+      - org.gnome.Geary
   - type: gnome-extensions
     install:
       - GSConnect
