@@ -64,6 +64,7 @@ modules:
       - com.mattjakeman.ExtensionManager
       - org.gnome.Connections
       - org.gnome.Calendar
+      - org.gnome.Contacts
       - org.gnome.Geary
   - type: gnome-extensions
     install:
