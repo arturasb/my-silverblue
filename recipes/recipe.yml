@@ -66,6 +66,7 @@ modules:
       - org.gnome.Calendar
       - org.gnome.Contacts
       - org.gnome.Geary
+      - org.gnome.Calculator
   - type: gnome-extensions
     install:
       - GSConnect
