@@ -67,7 +67,12 @@ modules:
       - org.gnome.Contacts
       - org.gnome.Geary
       - org.gnome.Calculator
-  - type: gschema-overrides
+  -type: gnome-extensions
+    install:
+    - GSConnect # Uninstall step here should be used only for the extensions
+              # which are not installed through OS package manager in the base image,
+              # like extensions installed from gnome-extensions module
+  -type: gschema-overrides
       include:
         - zz1-mysettings.gschema.override
       
