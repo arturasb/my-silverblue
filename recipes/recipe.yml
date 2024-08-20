@@ -72,7 +72,7 @@ modules:
         - GSConnect
   - type: gschema-overrides
       include:
-        - zz1-gschema.override
+        - zz1-mysettings.gschema.override
       
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
