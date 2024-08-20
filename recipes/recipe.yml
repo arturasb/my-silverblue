@@ -72,9 +72,9 @@ modules:
     - GSConnect # Uninstall step here should be used only for the extensions
               # which are not installed through OS package manager in the base image,
               # like extensions installed from gnome-extensions module
-  - type: gschema-overrides
-      include:
-      - zz1-mysettings.gschema.override
+  #- type: gschema-overrides
+  #    include:
+  #    - zz1-mysettings.gschema.override
       
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
