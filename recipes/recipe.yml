@@ -21,7 +21,6 @@ modules:
     install:
       # - micro
       # - starship
-      - selinux-policy-40.17-1.fc40
       - virt-manager
     remove:
       # example: removing firefox (in favor of the flatpak)
