@@ -5,6 +5,7 @@ After=local-fs.target
 
 [Service]
 Type=oneshot
+ExecStart=-/bin/mkdir /var/log/libvirt/
 ExecStart=-/usr/sbin/restorecon -R /var/log/libvirt/
 ExecStart=-/usr/sbin/restorecon -R /var/lib/libvirt/
 RemainAfterExit=yes
