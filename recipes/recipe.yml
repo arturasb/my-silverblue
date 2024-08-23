@@ -68,6 +68,7 @@ modules:
       - org.gnome.Geary
       - org.gnome.Calculator
       - org.gnome.TextEditor
+      - org.fedoraproject.MediaWriter
   - type: gnome-extensions
     install:
     - GSConnect
