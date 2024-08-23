@@ -74,6 +74,12 @@ modules:
   - type: gschema-overrides
     include:
     - zz1-mysettings.gschema.override
-      
+
+  - type: systemd
+    # this example disables automatic flatpak updates and enables a custom service unit for all users
+    system:
+      enabled:
+        - libvirt-workaround.service
+        
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
