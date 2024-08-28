@@ -22,7 +22,7 @@ modules:
       # - micro
       # - starship
       - virt-manager
-      - https://github.com/arturasb/my-silverblue/blob/eaf3af34502715749e5108cb0289ae9299cfb30b/files/rpm-packages/homed-selinux-1.0-1.fc38.noarch.rpm
+      - https://github.com/arturasb/my-silverblue/raw/eaf3af34502715749e5108cb0289ae9299cfb30b/files/rpm-packages/homed-selinux-1.0-1.fc38.noarch.rpm
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
