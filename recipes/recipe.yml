@@ -85,7 +85,7 @@ modules:
         - libvirt-group.service
   - type: script
     snippets:
-      - "rpm-ostree install /files/offline-packages/homed-selinux-1.0-1.fc38.noarch.rpm" # fixing missing SELinux policies for systemd-homed
+      - "rpm-ostree install /tmp/homed-selinux-1.0-1.fc38.noarch.rpm" # fixing missing SELinux policies for systemd-homed
         
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
