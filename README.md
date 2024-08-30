@@ -1,5 +1,12 @@
 # mySilverblue &nbsp; [![bluebuild build badge](https://github.com/arturasb/mysilverblue/actions/workflows/build.yml/badge.svg)](https://github.com/arturasb/mysilverblue/actions/workflows/build.yml)
 
+The purpose of this custom OS image is to provide relevant settings and apps for personalized OS setup:
+
+- Install needed Flatpak apps to `--user` space.
+- Fix `libvirt` and `virt-manager` so it works in the Fedora Atomic Destop-based setup.
+> Easier way to get VMs is the GNOME Boxes, but the problem is that flatpak version of Boxes does not suport USB forwarding, e.g., for headset forward to VM.
+- Enable `systemd-homed` managed users for better privacy and data security. This requires specific SELinux policies which are not yet available to Fedora Atomic Desktops. There are more tweaks necessary to get `homed` working. There is a good [workaround](https://discussion.fedoraproject.org/t/building-a-new-home-with-systemd-homed-on-fedora/72690) to this situation. This OS build tries to provide `systemd-homed` OOTB.
+
 See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
 
 After setup, it is recommended you update this README to describe your custom image.
