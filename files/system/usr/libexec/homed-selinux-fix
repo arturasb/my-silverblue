@@ -16,8 +16,7 @@ fi
 /usr/bin/mount -o remount,rw /usr
 # Fix SELinux contexts
 /usr/sbin/restorecon -rv /usr/lib/systemd/systemd-homed /usr/lib/systemd/systemd-homework /usr/lib/systemd/system/systemd-homed.service /usr/lib/systemd/system/systemd-homed-activate.service /var/lib/systemd/home
-# Mounting /usr back to RO
-/usr/bin/mount -o remount,ro /usr
+echo "It is recommended to reboot system now in order to remount /usr RO."
 
 # Prevent future executions
 echo "Writing state file"
