@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# SCRIPT VERSION
+GROUP_SETUP_VER=1
+HOMED_SELINUX_FIX_VER_FILE="/etc/homed-selinux-workaround/homed-selinux-fix"
+HOMED_SELINUX_FIX_VER_RAN=$(cat "$HOMED_SELINUX_FIX_VER_FILE")
+
+# Run script if updated
+if [[ -f $HOMED_SELINUX_FIX_VER_FILE && "$HOMED_SELINUX_FIX_VER" = "$HOMED_SELINUX_FIX_VER_RAN" ]]; then
+  echo "Homed SELinux fix has already run. Exiting..."
+  exit 0
+fi
+
+# Fix SELinux contexts for systemd-homed executables
+# Mounting /usr RW to set SELinux contexts
+/usr/bin/mount -o remount,rw /usr
+# Fix SELinux contexts
+/usr/sbin/restorecon -rv /usr/lib/systemd/systemd-homed /usr/lib/systemd/systemd-homework /usr/lib/systemd/system/systemd-homed.service /usr/lib/systemd/system/systemd-homed-activate.service /var/lib/systemd/home
+# Mounting /usr back to RO
+/usr/bin/mount -o remount,ro /usr
+
+# Prevent future executions
+echo "Writing state file"
+echo "$HOMED_SELINUX_FIX_VER" > "$HOMED_SELINUX_FIX_VER_FILE"
+
