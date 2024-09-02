@@ -5,14 +5,10 @@ After=local-fs.target
 
 [Service]
 Type=oneshot
-
-# Mounting /usr RW to set SELinux contexts.
-ExecStartPre=/usr/bin/mount -o remount,rw /usr
-# Fix SELinux contect for systemd-homed executables.
-ExecStart=/usr/bin/bash -c "/usr/sbin/restorecon -rv /usr/lib/systemd/systemd-homed /usr/lib/systemd/systemd-homework /usr/lib/systemd/system/systemd-homed.service /usr/lib/systemd/system/systemd-homed-activate.service /var/lib/systemd/home"
-# Mounting /usr back to RO.
-ExecStop=/usr/bin/mount -o remount,ro /usr
-RemainAfterExit=yes
+ExecStart=/usr/libexec/homed-selinux-fix
+Restart=on-failure
+RestartSec=30
+StartLimitInterval=0
 
 [Install]
 WantedBy=multi-user.target
