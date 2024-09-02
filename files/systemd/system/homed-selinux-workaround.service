@@ -1,1 +1,14 @@
+[Unit]
+Description=Workaround for missing SELinux copntexts of systemd-homed executables.
+ConditionFileIsExecutable=/usr/lib/systemd/systemd-homed
+After=local-fs.target
+
+[Service]
+Type=oneshot
+# Fix SELinux contect for systemd-homed executables.
+ExecStart=/usr/bin/bash -c "/usr/sbin/restorecon -rv /usr/lib/systemd/systemd-homed /usr/lib/systemd/systemd-homework /usr/lib/systemd/system/systemd-homed.service /usr/lib/systemd/system/systemd-homed-activate.service /var/lib/systemd/home"
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
 
