@@ -79,14 +79,14 @@ modules:
     - zz1-mysettings.gschema.override
 
   - type: systemd
-    # this example disables automatic flatpak updates and enables a custom service unit for all users
+    # this example disables
     system:
       enabled:
         - libvirt-workaround.service
         - libvirt-group.service
+        - homed-selinux-workaround.service
   - type: script
     snippets:
-      - "sudo restorecon -rv /usr/lib/systemd/systemd-homed /usr/lib/systemd/systemd-homework /usr/lib/systemd/system/systemd-homed.service /usr/lib/systemd/system/systemd-homed-activate.service /var/lib/systemd/home"
       - "sudo authselect enable-feature with-systemd-homed"
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
