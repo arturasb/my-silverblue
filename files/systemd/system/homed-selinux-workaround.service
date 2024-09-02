@@ -1,7 +1,5 @@
 [Unit]
 Description=Workaround for missing SELinux contexts of systemd-homed executables.
-ConditionFileIsExecutable=/usr/lib/systemd/systemd-homed
-After=local-fs.target
 
 [Service]
 Type=oneshot
