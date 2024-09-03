@@ -2,7 +2,7 @@
 
 # SCRIPT VERSION
 GROUP_SETUP_VER=1
-GROUP_SETUP_VER_FILE="/etc/ublue/dx-groups"
+GROUP_SETUP_VER_FILE="/etc/my-workarounds/dx-groups"
 GROUP_SETUP_VER_RAN=$(cat "$GROUP_SETUP_VER_FILE")
 
 # Run script if updated
