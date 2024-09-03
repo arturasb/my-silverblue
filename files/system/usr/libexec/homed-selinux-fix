@@ -2,7 +2,7 @@
 
 # SCRIPT VERSION
 HOMED_SELINUX_FIX_VER=1
-HOMED_SELINUX_FIX_VER_FILE="/etc/homed-selinux-workaround/homed-selinux-fix"
+HOMED_SELINUX_FIX_VER_FILE="/etc/my-workarounds/homed-selinux-fix"
 HOMED_SELINUX_FIX_VER_RAN=$(cat "$HOMED_SELINUX_FIX_VER_FILE")
 
 # Run script if updated
