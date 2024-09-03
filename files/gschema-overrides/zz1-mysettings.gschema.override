@@ -2,5 +2,9 @@
 power-button-action='interactive'
 [org.gtk.settings.file-chooser]
 clock-format='24h'
+[org.gtk.gtk4.settings.file-chooser]
+clock-format='24h'
 [org.gnome.desktop.interface]
 text-scaling-factor=1.5
+[org.gnome.desktop.interface]
+clock-format='24h'
