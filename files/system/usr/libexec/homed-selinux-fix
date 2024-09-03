@@ -21,4 +21,3 @@ echo "It is recommended to reboot system now in order to remount /usr RO."
 # Prevent future executions
 echo "Writing state file"
 echo "$HOMED_SELINUX_FIX_VER" > "$HOMED_SELINUX_FIX_VER_FILE"
-
