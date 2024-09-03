@@ -17,4 +17,3 @@ fi
 # Prevent future executions
 echo "Writing state file"
 echo "$HOMED_AUTHSELECT_FIX_VER" > "$HOMED_AUTHSELECT_FIX_VER_FILE"
-
