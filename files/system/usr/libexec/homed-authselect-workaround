@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# SCRIPT VERSION
+HOMED_AUTHSELECT_FIX_VER=1
+HOMED_AUTHSELECT_FIX_VER_FILE="/etc/homed-authselect-workaround/homed-authselect-workaround"
+HOMED_AUTHSELECT_FIX_VER_RAN=$(cat "$HOMED_AUTHSELECT_FIX_VER_FILE")
+
+# Run script if updated
+if [[ -f $HOMED_AUTHSELECT_FIX_VER_FILE && "$HOMED_AUTHSELECT_FIX_VER" = "$HOMED_AUTHSELECT_FIX_VER_RAN" ]]; then
+  echo "Homed authselect fix has already run. Exiting..."
+  exit 0
+fi
+
+# Adding systemd-homed to authselect
+/usr/bin/authselect enable-feature with-systemd-homed
+
+# Prevent future executions
+echo "Writing state file"
+echo "$HOMED_AUTHSELECT_FIX_VER" > "$HOMED_AUTHSELECT_FIX_VER_FILE"
+
