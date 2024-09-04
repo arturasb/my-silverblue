@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
 # SCRIPT VERSION
-SWTPM-FIX_VER=1
-SWTPM-FIX_VER_FILE="/etc/my-workarounds/swtpm-fix"
-SWTPM-FIX_VER_RAN=$(cat "$SWTPM-FIX_VER_FILE")
+SWTPM_FIX_VER=1
+SWTPM_FIX_VER_FILE="/etc/my-workarounds/swtpm-fix"
+SWTPM_FIX_VER_RAN=$(cat "$SWTPM_FIX_VER_FILE")
 
 # Run script if updated
-if [[ -f $SWTPM-FIX_VER_FILE && "$SWTPM-FIX_VER" = "$SWTPM-FIX_VER_RAN" ]]; then
+if [[ -f $SWTPM_FIX_VER_FILE && "$SWTPM_FIX_VER" = "$SWTPM_FIX_VER_RAN" ]]; then
   echo "Homed SELinux fix has already run. Exiting..."
   exit 0
 fi
@@ -26,4 +26,4 @@ echo "It is recommended to reboot system now in order to remount /usr RO."
 
 # Prevent future executions
 echo "Writing state file"
-echo "$SWTPM-FIX_VER" > "$SWTPM-FIX_VER_FILE"
+echo "$SWTPM_FIX_VER" > "$SWTPM_FIX_VER_FILE"
