@@ -18,7 +18,7 @@ fi
 /usr/sbin/restorecon -rv /usr/bin/swtpm
 
 # Create missing swtpm-localca directory
-/usr/bin/mkdir swtpm-localca
+/usr/bin/mkdir /var/lib/swtpm-localca
 # Fix ownership of swtpm-localca directory
 /usr/bin/chown tss /var/lib/swtpm-localca
 
