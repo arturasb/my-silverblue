@@ -7,7 +7,7 @@ SWTPM_FIX_VER_RAN=$(cat "$SWTPM_FIX_VER_FILE")
 
 # Run script if updated
 if [[ -f $SWTPM_FIX_VER_FILE && "$SWTPM_FIX_VER" = "$SWTPM_FIX_VER_RAN" ]]; then
-  echo "Homed SELinux fix has already run. Exiting..."
+  echo "Homed swtpm fix has already run. Exiting..."
   exit 0
 fi
 
