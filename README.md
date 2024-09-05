@@ -1,15 +1,17 @@
-# mySilverblue &nbsp; [![bluebuild build badge](https://github.com/arturasb/mysilverblue/actions/workflows/build.yml/badge.svg)](https://github.com/arturasb/mysilverblue/actions/workflows/build.yml)
+# my-silverblue &nbsp; [![bluebuild build badge](https://github.com/arturasb/mysilverblue/actions/workflows/build.yml/badge.svg)](https://github.com/arturasb/mysilverblue/actions/workflows/build.yml)
 
-The purpose of this custom OS image is to provide relevant settings and apps for personalized OS setup:
+The purpose of this custom OS image is to provide relevant settings and apps for personalized OS setup. Customizations are necessary to make `libvirt`, `virt-manager` and `systemd-homed` functional OOTB.
+Current goals are:
 
-- Install needed Flatpak apps to `--user` space.
-- Fix `libvirt` and `virt-manager` so it works in the Fedora Atomic Destop-based setup.
-> Easier way to get VMs is the GNOME Boxes, but the problem is that flatpak version of Boxes does not suport USB forwarding, e.g., for headset forward to VM.
-- Enable `systemd-homed` managed users for better privacy and data security. This requires specific SELinux policies which are not yet available to Fedora Atomic Desktops. There are more tweaks necessary to get `homed` working. There is a good [workaround](https://discussion.fedoraproject.org/t/building-a-new-home-with-systemd-homed-on-fedora/72690) to this situation. This OS build tries to provide `systemd-homed` OOTB.
+1. Add `systemd-homed` managed user home for better portability and security.
+	1. Install needed Flatpak apps to `--user` space in oder to contain apps with settings in user's `home`.
+	2. Setting proper SELinux contexts to `systemd-homed` is required as a workaround. Also setting `authselect` with `systemd-homed`. There is a good [instruction](https://discussion.fedoraproject.org/t/building-a-new-home-with-systemd-homed-on-fedora/72690) to this situation.
+2. Fix membership of the `libvirt` group, `swtpm`(for Windows 11 VMs), `libvirt`, so `virt-manager` works in the Fedora Atomic Destop-based setup.
+	1. Setting proper SELinux contexts to `swtpm`, creating `swtpm-localca` in `/var/lib` and setting proper ownership of the `/var/lib/swtpm-localca` are required as a workaround.
+ 	2. Adding members of `wheel` to `libvirt` group.
+	> Easier way to get VMs is the GNOME Boxes, but the problem is that flatpak version of Boxes does not suport USB forwarding, e.g., for headset forward to VM.
 
-See the [BlueBuild docs](https://blue-build.org/how-to/setup/) for quick setup instructions for setting up your own repository based on this template.
-
-After setup, it is recommended you update this README to describe your custom image.
+Some of fixes&workarounds were inspired by/copied from the [bluefin](https://github.com/ublue-os/bluefin/pkgs/container/bluefin) project.
 
 ## Installation
 
