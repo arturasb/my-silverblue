@@ -71,6 +71,7 @@ modules:
       - org.gnome.TextEditor
       - org.fedoraproject.MediaWriter
       - org.gnome.Logs
+      - com.github.wwmm.easyeffects
   - type: gnome-extensions
     install:
     - GSConnect
