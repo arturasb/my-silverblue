@@ -2,6 +2,7 @@
 Description=Workaround systemd-homed executables not having the correct SELinux label
 ConditionFileIsExecutable=/usr/lib/systemd/systemd-homed
 After=local-fs.target
+WantedBy=systemd-homed.service
 
 [Service]
 Type=oneshot
