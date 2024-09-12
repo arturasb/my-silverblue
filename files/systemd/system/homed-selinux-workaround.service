@@ -2,7 +2,6 @@
 Description=Workaround systemd-homed executables not having the correct SELinux label
 ConditionFileIsExecutable=/usr/lib/systemd/systemd-homed
 After=local-fs.target
-WantedBy=systemd-homed.service
 
 [Service]
 Type=oneshot
@@ -11,13 +10,11 @@ ExecStartPre=/usr/bin/bash -c "[ -x /usr/local/bin/overrides/systemd-homed ] || 
 ExecStartPre=/usr/bin/bash -c "[ -x /usr/local/bin/overrides/systemd-homework ] || /usr/bin/cp /usr/lib/systemd/systemd-homework /usr/local/bin/overrides/systemd-homework"
 ExecStartPre=/usr/bin/bash -c "[ -x /usr/local/bin/overrides/systemd-homed.service ] || /usr/bin/cp /usr/lib/systemd/system/systemd-homed.service /usr/local/bin/overrides/systemd-homed.service"
 ExecStartPre=/usr/bin/bash -c "[ -x /usr/local/bin/overrides/systemd-homed-activate.service ] || /usr/bin/cp /usr/lib/systemd/system/systemd-homed-activate.service /usr/local/bin/overrides/systemd-homed-activate.service"
-# ExecStartPre=/usr/bin/bash -c "[ -x /usr/local/bin/overrides/home ] || /usr/bin/mkdir /usr/local/bin/overrides/home"
 # This is faster than using .mount unit. Also allows for the previous line/cleanup
 ExecStartPre=/usr/bin/mount --bind /usr/local/bin/overrides/systemd-homed /usr/lib/systemd/systemd-homed
 ExecStartPre=/usr/bin/mount --bind /usr/local/bin/overrides/systemd-homework /usr/lib/systemd/systemd-homework
 ExecStartPre=/usr/bin/mount --bind /usr/local/bin/overrides/systemd-homed.service /usr/lib/systemd/system/systemd-homed.service
 ExecStartPre=/usr/bin/mount --bind /usr/local/bin/overrides/systemd-homed-activate.service /usr/lib/systemd/system/systemd-homed-activate.service
-# ExecStartPre=/usr/bin/mount --bind /usr/local/bin/overrides/home /var/lib/systemd/home
 # Fix SELinux labels
 ExecStart=/usr/sbin/restorecon -rv /usr/lib/systemd/systemd-homed /usr/lib/systemd/systemd-homework /usr/lib/systemd/system/systemd-homed.service /usr/lib/systemd/system/systemd-homed-activate.service /var/lib/systemd/home
 # Clean-up after ourselves
@@ -25,13 +22,11 @@ ExecStop=/usr/bin/umount /usr/lib/systemd/systemd-homed
 ExecStop=/usr/bin/umount /usr/lib/systemd/systemd-homework
 ExecStop=/usr/bin/umount /usr/lib/systemd/system/systemd-homed.service
 ExecStop=/usr/bin/umount /usr/lib/systemd/system/systemd-homed-activate.service
-# ExecStop=/usr/bin/umount /var/lib/systemd/home
 ExecStop=/usr/bin/rm /usr/local/bin/overrides/systemd-homed
 ExecStop=/usr/bin/rm /usr/local/bin/overrides/systemd-homework
 ExecStop=/usr/bin/rm /usr/local/bin/overrides/systemd-homed.service
 ExecStop=/usr/bin/rm /usr/local/bin/overrides/systemd-homed-activate.service
-# ExecStop=/usr/bin/rmdir --ignore-fail-on-non-empty /usr/local/bin/overrides/home
 RemainAfterExit=yes
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=systemd-homed.service
