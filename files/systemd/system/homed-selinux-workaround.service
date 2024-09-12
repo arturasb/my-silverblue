@@ -18,14 +18,14 @@ ExecStartPre=/usr/bin/mount --bind /usr/local/bin/overrides/systemd-homed-activa
 # Fix SELinux labels
 ExecStart=/usr/sbin/restorecon -rv /usr/lib/systemd/systemd-homed /usr/lib/systemd/systemd-homework /usr/lib/systemd/system/systemd-homed.service /usr/lib/systemd/system/systemd-homed-activate.service /var/lib/systemd/home
 # Clean-up after ourselves
-ExecStart=/usr/bin/umount /usr/lib/systemd/systemd-homed
-ExecStart=/usr/bin/umount /usr/lib/systemd/systemd-homework
-ExecStart=/usr/bin/umount /usr/lib/systemd/system/systemd-homed.service
-ExecStart=/usr/bin/umount /usr/lib/systemd/system/systemd-homed-activate.service
-ExecStart=/usr/bin/rm /usr/local/bin/overrides/systemd-homed
-ExecStart=/usr/bin/rm /usr/local/bin/overrides/systemd-homework
-ExecStart=/usr/bin/rm /usr/local/bin/overrides/systemd-homed.service
-ExecStart=/usr/bin/rm /usr/local/bin/overrides/systemd-homed-activate.service
+ExecStop=/usr/bin/umount /usr/lib/systemd/systemd-homed
+ExecStop=/usr/bin/umount /usr/lib/systemd/systemd-homework
+ExecStop=/usr/bin/umount /usr/lib/systemd/system/systemd-homed.service
+ExecStop=/usr/bin/umount /usr/lib/systemd/system/systemd-homed-activate.service
+ExecStop=/usr/bin/rm /usr/local/bin/overrides/systemd-homed
+ExecStop=/usr/bin/rm /usr/local/bin/overrides/systemd-homework
+ExecStop=/usr/bin/rm /usr/local/bin/overrides/systemd-homed.service
+ExecStop=/usr/bin/rm /usr/local/bin/overrides/systemd-homed-activate.service
 RemainAfterExit=yes
 
 [Install]
