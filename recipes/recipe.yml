@@ -75,6 +75,7 @@ modules:
   - type: gnome-extensions
     install:
     - GSConnect
+    - 615 # AppIndicator
   - type: gschema-overrides
     include:
     - zz1-mysettings.gschema.override
