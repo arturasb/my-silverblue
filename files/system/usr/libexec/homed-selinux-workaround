@@ -14,7 +14,7 @@ fi
 # Applying SELInux policies to systemd-homed executables and directories
 /usr/bin/mount -o remount,rw /usr
 /usr/sbin/restorecon -rv /usr/lib/systemd/systemd-homed /usr/lib/systemd/systemd-homework /usr/lib/systemd/system/systemd-homed.service /usr/lib/systemd/system/systemd-homed-activate.service   /var/lib/systemd/home
-echo "Is it recommended to reboot system now so /usr is mounted read-only again
+echo "Is it recommended to reboot system now so /usr is mounted read-only again."
 
 # Prevent future executions
 echo "Writing state file"
