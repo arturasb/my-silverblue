@@ -1,5 +1,7 @@
 # my-silverblue &nbsp; [![bluebuild build badge](https://github.com/arturasb/mysilverblue/actions/workflows/build.yml/badge.svg)](https://github.com/arturasb/mysilverblue/actions/workflows/build.yml)
 
+NOTE - the project is put on hold until `systemd-homed` issues are resolved upstream.
+
 The purpose of this custom OS image is to provide relevant settings and apps for personalized OS setup. Customizations are necessary to make `libvirt`, `virt-manager` and `systemd-homed` functional OOTB.
 Current goals are:
 
