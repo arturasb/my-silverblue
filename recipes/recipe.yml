@@ -67,7 +67,7 @@ modules:
       repo-url: oci+https://registry.fedoraproject.org
       repo-title: "Fedora Flatpak (User)"
       install:
-      - virt-manager
+      - org.virt_manager.virt-manager
 
   - type: gnome-extensions
     install:
