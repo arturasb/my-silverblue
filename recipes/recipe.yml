@@ -26,6 +26,16 @@ modules:
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
+    user:
+      # Fedora flatpak repo because virt-manager is packaged as flatpak by Fedora
+      repo-name: fedora
+      repo-url: oci+https://registry.fedoraproject.org
+      repo-title: "Fedora Flatpak (User)"
+      install:
+      - org.virt_manager.virt-manager
+
+  - type: default-flatpaks
+    notify: true # Send notification after install/uninstall is finished (true/false)
     system:
       # If no repo information is specified, Flathub will be used by default
       # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
@@ -62,12 +72,6 @@ modules:
       - org.fedoraproject.MediaWriter
       - org.gnome.Logs
       - com.github.wwmm.easyeffects
-      # Fedora flatpak repo because virt-manager is packaged as flatpak by Fedora
-      repo-name: fedora
-      repo-url: oci+https://registry.fedoraproject.org
-      repo-title: "Fedora Flatpak (User)"
-      install:
-      - org.virt_manager.virt-manager
 
   - type: gnome-extensions
     install:
