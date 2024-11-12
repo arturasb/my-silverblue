@@ -35,17 +35,17 @@ modules:
       - org.virt_manager.virt-manager
       - com.github.tchx84.Flatseal
       - de.haeckerfelix.Fragments
-      - io.freetubeapp.FreeTube
+      # - io.freetubeapp.FreeTube
       - org.keepassxc.KeePassXC
-      - org.mozilla.Thunderbird
+      # - org.mozilla.Thunderbird
       - org.mozilla.firefox
-      - org.telegram.desktop
+      # - org.telegram.desktop
       - org.libreoffice.LibreOffice
       - org.gnome.Connections
       - io.github.celluloid_player.Celluloid
-      - com.usebottles.bottles
-      - org.gnome.Boxes
-      - com.mattjakeman.ExtensionManager
+      # - com.usebottles.bottles
+      # - org.gnome.Boxes
+      # - com.mattjakeman.ExtensionManager
       - org.gnome.Connections
       - org.gnome.Calendar
       - org.gnome.Contacts
