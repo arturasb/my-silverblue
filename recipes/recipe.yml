@@ -21,8 +21,8 @@ modules:
     install:
       # - micro
       # - starship
-      - virt-manager
-      - https://github.com/arturasb/my-silverblue/raw/eaf3af34502715749e5108cb0289ae9299cfb30b/files/rpm-packages/homed-selinux-1.0-1.fc38.noarch.rpm
+      # - virt-manager
+      # - https://github.com/arturasb/my-silverblue/raw/eaf3af34502715749e5108cb0289ae9299cfb30b/files/rpm-packages/homed-selinux-1.0-1.fc38.noarch.rpm
     remove:
       # example: removing firefox (in favor of the flatpak)
       # "firefox" is the main package, "firefox-langpacks" is a dependency
@@ -37,15 +37,14 @@ modules:
       # repo-name: flathub
       # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
       install:
-        # - org.mozilla.firefox
-        # - org.gnome.Loupe
-        # - one.ablaze.floorp//lightning # This is an example of flatpak which has multiple branches in selection (flatpak//branch).
-      # Flatpak runtimes are not supported (like org.winehq.Wine//stable-23.08),
-      # only normal flatpak applications are (like Floorp Lightning web browser in this example).
-      # Installing different branches of the same Flatpak is not supported.
       remove:
-      # - org.gnome.eog
     user:
+      # Fedora flatpak repo because virt-manager is packaged as flatpak by Fedora
+      repo-name: fedora
+      repo-url: oci+https://registry.fedoraproject.org
+      install:
+      - virt-manager
+      
       # repo-name will overwrite the previously-configured repo-name for the user remote
       repo-name: flathub-user
       repo-title: "Flathub (User)"
@@ -81,14 +80,13 @@ modules:
     - zz1-mysettings.gschema.override
 
   - type: systemd
-    # this example disables
     system:
       enabled:
-        - libvirt-workaround.service
-        - libvirt-group.service
-        - homed-selinux-workaround.service
+  #      - libvirt-workaround.service
+  #      - libvirt-group.service
+  #      - homed-selinux-workaround.service
+  #      - swtpm-workaround.service
         - homed-authselect-workaround.service
-        - swtpm-workaround.service
 
   - type: signing # this sets up the proper policy & signing files for signed images to work fully
 
