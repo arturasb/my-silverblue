@@ -23,6 +23,18 @@ modules:
       # "firefox" is the main package, "firefox-langpacks" is a dependency
       - firefox
       - firefox-langpacks # also remove firefox dependency (not required for all packages, this is a special case)
+    install:
+      - libvirt-daemon-driver-network
+      - libvirt-daemon-driver-nodedev
+      - libvirt-daemon-driver-qemu
+      - libvirt-daemon-driver-storage-core
+      - qemu-audio-spice
+      - qemu-char-spice
+      - qemu-device-display-qxl
+      - qemu-device-display-virtio-gpu
+      - qemu-device-display-virtio-vga
+      - qemu-device-usb-redirect
+      - qemu-system-x86-core
 
   - type: default-flatpaks
     notify: true # Send notification after install/uninstall is finished (true/false)
