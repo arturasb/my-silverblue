@@ -33,23 +33,6 @@ modules:
       repo-title: "Fedora Flatpak (User)"
       install:
       - org.virt_manager.virt-manager
-
-  - type: default-flatpaks
-    notify: true # Send notification after install/uninstall is finished (true/false)
-    system:
-      # If no repo information is specified, Flathub will be used by default
-      # repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      # repo-name: flathub
-      # repo-title: "Flathub (system-wide)" # Optional; this sets the remote's user-facing name in graphical frontends like GNOME Software
-      install:
-      remove:
-
-    user:
-      # repo-name will overwrite the previously-configured repo-name for the user remote
-      repo-name: flathub-user
-      repo-url: https://dl.flathub.org/repo/flathub.flatpakrepo
-      repo-title: "Flathub (User)"
-      install:
       - com.github.tchx84.Flatseal
       - de.haeckerfelix.Fragments
       - io.freetubeapp.FreeTube
