@@ -43,7 +43,7 @@ modules:
       repo-name: flathub
       repo-title: "Flatpak (User)"
       install:
-      - org.virt_manager.virt-manager
+      #- org.virt_manager.virt-manager
       - com.github.tchx84.Flatseal
       - de.haeckerfelix.Fragments
       - io.freetubeapp.FreeTube
