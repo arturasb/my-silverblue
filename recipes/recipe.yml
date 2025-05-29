@@ -43,29 +43,33 @@ modules:
       repo-name: flathub
       repo-title: "Flatpak (User)"
       install:
-      #- org.virt_manager.virt-manager
+      - com.github.maoschanz.drawing
       - com.github.tchx84.Flatseal
+      - com.github.wwmm.easyeffects
+      - com.jgraph.drawio.desktop
       - de.haeckerfelix.Fragments
       - io.freetubeapp.FreeTube
-      - org.keepassxc.KeePassXC
-      - org.mozilla.Thunderbird
-      - org.mozilla.firefox
-      - org.telegram.desktop
-      - org.libreoffice.LibreOffice
-      - org.gnome.Connections
       - io.github.celluloid_player.Celluloid
-      - com.usebottles.bottles
-      - org.gnome.Boxes
-      - com.mattjakeman.ExtensionManager
-      - org.gnome.Connections
+      - io.github.pwr_solaar.solaar
+      - io.github.shiftey.Desktop
+      - net.nokyan.Resources
+      - org.gaphor.Gaphor
+      - org.gimp.GIMP
+      - org.gimp.GIMP.HEIC
       - org.gnome.Calendar
+      - org.gnome.Connections
       - org.gnome.Contacts
-      - org.gnome.Geary
-      - org.gnome.Calculator
-      - org.gnome.TextEditor
-      - org.fedoraproject.MediaWriter
-      - org.gnome.Logs
-      - com.github.wwmm.easyeffects
+      - org.gnome.Epiphany
+      - org.gnome.Extensions
+      - org.gnome.gThumb
+      - org.gnome.gitlab.YaLTeR.VideoTrimmer
+      - org.keepassxc.KeePassXC
+      - org.localsend.localsend_app
+      - org.mozilla.Thunderbird
+      - org.signal.Signal
+      - org.telegram.desktop
+      - org.videolan.VLC
+      - page.tesk.Refine
 
   - type: gnome-extensions
     install:
